@@ -14,6 +14,8 @@ import java.util.List;
 public class AddOrderActivity extends AppCompatActivity {
     private Spinner spinner2;
 
+    String baseEndPoint = "http://10.0.2.2:5000/getItems/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thecyberian.cms_system">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddOrderActivity"></activity>
+        <activity android:name=".OrderDetailsActivity"></activity>
+        <activity android:name=".AddOrderActivity" />
         <activity android:name=".CustomerDetails" />
         <activity android:name=".CustomerSearch" />
         <activity android:name=".AddCustomerActivity" />
@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
     </application>
+
     <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
