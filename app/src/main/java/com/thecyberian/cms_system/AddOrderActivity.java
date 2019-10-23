@@ -38,7 +38,11 @@ public class AddOrderActivity extends AppCompatActivity {
         spinner2.setAdapter(dataAdapter);
     }
 
-
+/*
+* Add a button here which will save the data
+* Spinners to be created - 5
+* spinners to be populated from api - content types
+* 5 order details to be captured and sent to api */
     // get the selected dropdown list value
     public void addListenerOnButton() {
 

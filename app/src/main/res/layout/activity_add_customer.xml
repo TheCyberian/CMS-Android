@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="20dp"
+    android:scrollbars="vertical"
     tools:context=".AddCustomerActivity">
 
     <EditText
@@ -13,40 +14,40 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Initial"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Name"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/address1EditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Address 1"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/address2EditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Address 2"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/address3EditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Address 3"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
 
     <EditText
@@ -54,43 +55,45 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Pincode"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/phone1EditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Phone"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/phone2EditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Mobile"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="email"
-        android:layout_marginBottom="10dp"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/button"
+        android:layout_marginBottom="5dp"
+        android:textSize="20sp" />
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    <Button
+        android:id="@+id/saveCustomerButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save Customer" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save &amp; Create Order" />
-
+        <Button
+            android:id="@+id/saveAndCreateOrderButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save &amp; Create Order" />
+    </LinearLayout>
 </LinearLayout>

@@ -28,6 +28,10 @@ public class CustomerSearch extends AppCompatActivity {
     ArrayAdapter searchListAdapter;
     ArrayList<String[]> customerData;
 
+    /*
+    Add a method for on list item click listener which triggers customer details activity
+    * */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

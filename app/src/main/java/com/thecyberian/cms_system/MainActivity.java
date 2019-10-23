@@ -44,7 +44,15 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(MainActivity.this, "Enter one of the values to perform search operation.", Toast.LENGTH_SHORT).show();
         }
+    }
 
+    public void addCustomer(View view){
+        Intent intent = new Intent(MainActivity.this, AddCustomerActivity.class);
+        startActivity(intent);
+    }
 
+    public void addItem(View view){
+        Intent intent = new Intent(MainActivity.this, AddItemActivity.class);
+        startActivity(intent);
     }
 }

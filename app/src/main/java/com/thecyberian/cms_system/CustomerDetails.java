@@ -33,6 +33,11 @@ public class CustomerDetails extends AppCompatActivity {
 
     ArrayList<String[]> orderData;
 
+    /*
+    * add method for onClick on create order button
+    * same method to be tweaked for on create customer and order
+    * */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OrderDetailsActivity"></activity>
+        <activity android:name=".AddItemActivity"></activity>
+        <activity android:name=".OrderDetailsActivity" />
         <activity android:name=".AddOrderActivity" />
         <activity android:name=".CustomerDetails" />
         <activity android:name=".CustomerSearch" />
