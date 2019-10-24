@@ -99,17 +99,36 @@ public class OrderDetailsActivity extends AppCompatActivity {
             totalAmount3 = getIntent().getIntExtra("totalAmount3", -1);
             totalAmount4 = getIntent().getIntExtra("totalAmount4", -1);
 
+            String url;
 
-            Log.i("Name", name.split(" ")[3]);
-            Log.i("Phone", phone.split("\n")[1]);
+            if (name.split(" ")[0].contains("Name")) {
+                url = baseEndPoint + "?name=%27" + name.split(" ")[3] + "%27&phone=" + phone.split("\n")[1];
+                Log.i("Name", name.split(" ")[3]);
+                Log.i("Phone", phone.split("\n")[1]);
+            } else {
+                url = baseEndPoint + "?name=%27" + name.split(" ")[1] + "%27&phone=" + phone.split("\n")[1];
+                Log.i("Name", name.split(" ")[1]);
+                Log.i("Phone", phone.split("\n")[1]);
+            }
 
-            String url = baseEndPoint + "?name=%27" + name.split(" ")[3] + "%27&phone=" + phone.split("\n")[1];
+
+//            String url = baseEndPoint + "?name=%27" + name.split(" ")[3] + "%27&phone=" + phone.split("\n")[1];
             GetDataFromApi task = new GetDataFromApi();
             task.execute(url);
 
-            /*
-             * Add the Updates to UI and finish up :)
-             * */
+
+            orderIdEditText.setText(" Completed adding Order for the customer.");
+            orderIdEditText.setTextSize(20);
+            itemNameEditText.setText(" Please tap here to continue...");
+            itemNameEditText.setTextSize(20);
+            itemNameEditText.setTextColor(getResources().getColor(R.color.colorPrimary));
+            itemNameEditText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(OrderDetailsActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
@@ -155,7 +174,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
                     custId = jsonArray.get(0).toString();
                     Log.i("CustId", custId);
 
-                saveCustomer();
+                    saveCustomer();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -226,11 +245,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
     }
 
 
-    public class HttpPostAsyncTask extends AsyncTask<String, Void, Void> {
+    private class HttpPostAsyncTask extends AsyncTask<String, Void, Void> {
 
         JSONObject postData;
 
-        public HttpPostAsyncTask(Map<String, String> postData) {
+        HttpPostAsyncTask(Map<String, String> postData) {
             if (postData != null) {
                 this.postData = new JSONObject(postData);
             }
@@ -280,7 +299,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            Toast.makeText(OrderDetailsActivity.this, "Saved Customer Successfully.", Toast.LENGTH_LONG).show();
+            Toast.makeText(OrderDetailsActivity.this, "Saved Order Successfully.", Toast.LENGTH_LONG).show();
         }
     }
 
