@@ -1,99 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="20dp"
-    android:scrollbars="vertical"
-    tools:context=".AddCustomerActivity">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/initialEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Initial"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Name"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/address1EditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Address 1"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/address2EditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Address 2"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/address3EditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Address 3"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-
-    <EditText
-        android:id="@+id/pincodeEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Pincode"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/phone1EditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Phone"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/phone2EditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Mobile"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/emailEditText"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="email"
-        android:layout_marginBottom="5dp"
-        android:textSize="20sp" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    <Button
-        android:id="@+id/saveCustomerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Customer" />
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:isScrollContainer="false"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:context=".AddCustomerActivity">
 
-        <Button
-            android:id="@+id/saveAndCreateOrderButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save &amp; Create Order" />
+        <EditText
+            android:id="@+id/initialEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Initial"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Name"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/address1EditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Address 1"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/address2EditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Address 2"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/address3EditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Address 3"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/pincodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Pincode"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/phone1EditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Phone"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/phone2EditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Mobile"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:hint="email"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/saveCustomerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="saveCustomer"
+                android:text="Save Customer" />
+
+            <Button
+                android:id="@+id/saveAndCreateOrderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="saveCustomerAndCreateOrder"
+                android:text="Save &amp; Create Order" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

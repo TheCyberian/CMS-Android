@@ -33,10 +33,16 @@ public class CustomerDetails extends AppCompatActivity {
 
     ArrayList<String[]> orderData;
 
-    /*
-    * add method for onClick on create order button
-    * same method to be tweaked for on create customer and order
-    * */
+    public void createOrder(View view) {
+        Intent intent = new Intent(CustomerDetails.this, AddOrderActivity.class);
+
+        intent.putExtra("name", nameTextView.getText().toString());
+        intent.putExtra("address", addressTextView.getText().toString());
+        intent.putExtra("phone", contactTextView.getText().toString());
+
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
