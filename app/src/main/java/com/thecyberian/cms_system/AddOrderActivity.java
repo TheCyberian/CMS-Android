@@ -21,7 +21,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AddOrderActivity extends AppCompatActivity {
 
@@ -35,7 +37,10 @@ public class AddOrderActivity extends AppCompatActivity {
     EditText spinner3Weight;
     EditText spinner4Weight;
 
-    EditText totalAmountLentEditText;
+    EditText totalAmountLent1EditText;
+    EditText totalAmountLent2EditText;
+    EditText totalAmountLent3EditText;
+    EditText totalAmountLent4EditText;
 
     String item1;
     String item2;
@@ -48,7 +53,7 @@ public class AddOrderActivity extends AppCompatActivity {
 
     String baseEndPoint = "http://10.0.2.2:5000/getItems";
     List<String> itemsData;
-    List<Integer> itemIdList;
+    Map<String, Integer> itemIdList;
 
     TextView nameTextView;
     TextView addressTextView;
@@ -78,7 +83,10 @@ public class AddOrderActivity extends AppCompatActivity {
         spinner3Weight = findViewById(R.id.spinner3WightEditText);
         spinner4Weight = findViewById(R.id.spinner4WightEditText);
 
-        totalAmountLentEditText = findViewById(R.id.totalAmountLentEditText);
+        totalAmountLent1EditText = findViewById(R.id.totalAmountLent1EditText);
+        totalAmountLent2EditText = findViewById(R.id.totalAmountLent2EditText);
+        totalAmountLent3EditText = findViewById(R.id.totalAmountLent3EditText);
+        totalAmountLent4EditText = findViewById(R.id.totalAmountLent4EditText);
 
         GetDataFromApi task = new GetDataFromApi();
         task.execute(baseEndPoint);
@@ -97,19 +105,28 @@ public class AddOrderActivity extends AppCompatActivity {
         intent.putExtra("address", getIntent().getStringExtra("address"));
         intent.putExtra("phone", getIntent().getStringExtra("phone"));
 
-
-//        itemIdList.get(itemsData.indexOf(item1));
-        intent.putExtra("item1", itemIdList.get(itemsData.indexOf(item1)));
-        intent.putExtra("item2", itemIdList.get(itemsData.indexOf(item2)));
-        intent.putExtra("item3", itemIdList.get(itemsData.indexOf(item3)));
-        intent.putExtra("item4", itemIdList.get(itemsData.indexOf(item4)));
+        try {
+            intent.putExtra("item1", itemIdList.get(item1));
+            intent.putExtra("item2", itemIdList.get(item2));
+            intent.putExtra("item3", itemIdList.get(item3));
+            intent.putExtra("item4", itemIdList.get(item4));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         intent.putExtra("item1Weight", item1Weight);
         intent.putExtra("item2Weight", item2Weight);
         intent.putExtra("item3Weight", item3Weight);
         intent.putExtra("item4Weight", item4Weight);
 
-        intent.putExtra("amountLent", totalAmountLentEditText.getText().toString());
+        try {
+            intent.putExtra("totalAmount1", Integer.parseInt(totalAmountLent1EditText.getText().toString()));
+            intent.putExtra("totalAmount2", Integer.parseInt(totalAmountLent2EditText.getText().toString()));
+            intent.putExtra("totalAmount3", Integer.parseInt(totalAmountLent3EditText.getText().toString()));
+            intent.putExtra("totalAmount4", Integer.parseInt(totalAmountLent4EditText.getText().toString()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         intent.putExtra("FROM_ACTIVITY", "AddOrderActivity");
 
@@ -156,7 +173,7 @@ public class AddOrderActivity extends AppCompatActivity {
             try {
                 JSONArray jsonArray = new JSONArray(s);
                 ArrayList<String> data = new ArrayList<>();
-
+                itemIdList = new HashMap<>();
                 spinner1 = findViewById(R.id.spinner1);
                 spinner2 = findViewById(R.id.spinner2);
                 spinner3 = findViewById(R.id.spinner3);
@@ -167,9 +184,7 @@ public class AddOrderActivity extends AppCompatActivity {
                 for (int i = 1; i <= jsonArray.length(); i++) {
                     JSONArray subArray = jsonArray.getJSONArray(i - 1);
 
-//                    itemIdList.add(i, Integer.parseInt(subArray.get(0).toString()));
-//                    Log.i("ItemId", subArray.get(0).toString());
-//                    Log.i("ItemId", subArray.get(0).toString());
+                    itemIdList.put(subArray.get(1).toString(), Integer.parseInt(subArray.get(0).toString()));
 
                     data.add(i, subArray.get(1).toString());
                 }

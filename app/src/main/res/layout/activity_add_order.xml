@@ -1,106 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10sp"
-    android:orientation="vertical"
-    tools:context=".CustomerDetails">
+    android:layout_margin="10sp">
 
-    <TextView
-        android:id="@+id/nameTextView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name : " />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".CustomerDetails">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name : " />
 
 
-    <TextView
-        android:id="@+id/addressTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Address : " />
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address : " />
 
-    <TextView
-        android:id="@+id/contactTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone : " />
+        <TextView
+            android:id="@+id/contactTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone : " />
 
-    <TextView
-        android:id="@+id/ordersTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Orders :" />
+        <TextView
+            android:id="@+id/ordersTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Orders :" />
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="10dp" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp" />
 
-    <EditText
-        android:id="@+id/spinner1WightEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:inputType="textPersonName"
-        android:hint="Weight" />
+        <EditText
+            android:id="@+id/spinner1WightEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/totalAmountLent1EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Amount Lent (in Rupees)"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/spinner2WightEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:inputType="textPersonName"
-        android:hint="Weight" />
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/spinner2WightEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/spinner3WightEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:inputType="textPersonName"
-        android:hint="Weight" />
+        <EditText
+            android:id="@+id/totalAmountLent2EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Amount Lent (in Rupees)"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
-    <Spinner
-        android:id="@+id/spinner4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/spinner4WightEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:inputType="textPersonName"
-        android:hint="Weight" />
+        <EditText
+            android:id="@+id/spinner3WightEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/totalAmountLent3EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Amount Lent (in Rupees)"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/spinner4WightEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weight"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
 
-    <EditText
-        android:id="@+id/totalAmountLentEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:inputType="textPersonName"
-        android:hint="Total Amount Lent (in Rupees)" />
+        <EditText
+            android:id="@+id/totalAmountLent4EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Total Amount Lent (in Rupees)"
+            android:inputType="textPersonName"
+            android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/createOrderButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="saveOrder"
-        android:text="Save Order" />
-
-
-</LinearLayout>
+        <Button
+            android:id="@+id/createOrderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="saveOrder"
+            android:text="Save Order" />
+    </LinearLayout>
+</ScrollView>
