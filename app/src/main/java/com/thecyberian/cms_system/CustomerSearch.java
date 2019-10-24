@@ -28,10 +28,6 @@ public class CustomerSearch extends AppCompatActivity {
     ArrayAdapter searchListAdapter;
     ArrayList<String[]> customerData;
 
-    /*
-    Add a method for on list item click listener which triggers customer details activity
-    * */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,31 +108,36 @@ public class CustomerSearch extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            try {
-                JSONArray jsonArray = new JSONArray(s);
-                ArrayList<String> data = new ArrayList<>();
-                customerData = new ArrayList<>();
+            if (s != null) {
+                try {
+                    JSONArray jsonArray = new JSONArray(s);
+                    ArrayList<String> data = new ArrayList<>();
+                    customerData = new ArrayList<>();
 
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONArray subArray = jsonArray.getJSONArray(i);
-                    data.add(i, subArray.get(1).toString());
 
-                    String[] customer = new String[4];
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONArray subArray = jsonArray.getJSONArray(i);
+                        data.add(i, subArray.get(1).toString());
 
-                    customer[0] = subArray.get(0).toString();
-                    customer[1] = subArray.get(2).toString() + " " + subArray.get(1).toString();
-                    customer[2] = subArray.get(3).toString() + " \n" + subArray.get(4).toString()+ "\n" + subArray.get(5).toString();
-                    customer[3] = subArray.get(7).toString() + " \n" + subArray.get(8).toString();
-                    /*Using sub array create another string sub array and add to customer data*/
-                    customerData.add(i, customer);
+                        String[] customer = new String[4];
+
+                        customer[0] = subArray.get(0).toString();
+                        customer[1] = subArray.get(2).toString() + " " + subArray.get(1).toString();
+                        customer[2] = subArray.get(3).toString() + " \n" + subArray.get(4).toString() + "\n" + subArray.get(5).toString();
+                        customer[3] = subArray.get(7).toString() + " \n" + subArray.get(8).toString();
+                        /*Using sub array create another string sub array and add to customer data*/
+                        customerData.add(i, customer);
+                    }
+
+                    searchListAdapter = new ArrayAdapter(CustomerSearch.this, android.R.layout.simple_list_item_1, data);
+
+                    resultsListView.setAdapter(searchListAdapter);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-
-                searchListAdapter = new ArrayAdapter(CustomerSearch.this, android.R.layout.simple_list_item_1, data);
-
-                resultsListView.setAdapter(searchListAdapter);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+            } else {
+                finish();
             }
         }
     }

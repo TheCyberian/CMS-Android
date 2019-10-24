@@ -75,13 +75,13 @@ public class CustomerDetails extends AppCompatActivity {
         orderList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(CustomerDetails.this, "Tapped", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(CustomerDetails.this, OrderDetailsActivity.class);
                 intent.putExtra("orderIdEditText", orderData.get(i)[0]);
                 intent.putExtra("itemNameEditText", orderData.get(i)[1]);
                 intent.putExtra("weight", orderData.get(i)[2]);
                 intent.putExtra("amountPaid", orderData.get(i)[3]);
-                intent.putExtra("totalAmount", orderData.get(i)[3]);
+                intent.putExtra("totalAmount", orderData.get(i)[4]);
+                intent.putExtra("FROM_ACTIVITY", "CustomerDetails");
                 startActivity(intent);
             }
         });
@@ -141,6 +141,11 @@ public class CustomerDetails extends AppCompatActivity {
                     order[3] = subArray.get(3).toString();
                     order[4] = subArray.get(4).toString();
 
+                    Log.i("Order 0", String.valueOf(order[0]));
+                    Log.i("Order 1", String.valueOf(order[1]));
+                    Log.i("Order 2", String.valueOf(order[2]));
+                    Log.i("Order 3", String.valueOf(order[3]));
+                    Log.i("Order 4", String.valueOf(order[4]));
                     orderData.add(i, order);
                 }
 
